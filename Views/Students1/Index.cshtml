@@ -1,0 +1,127 @@
+﻿@*@model IEnumerable<demoCoreWithMVC.Models.Student>*@
+@*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link rel="stylesheet" type="text/css" href="../Views/Students1/Student.css" />*@
+
+
+<!--<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="@Url.Content("../Views/Students1/Student.css")" rel="stylesheet" type="text/css" />-->
+@*@RenderSection("Styles", required: true)*@
+<!--</head>-->
+@*@section Styles {
+        <link href="@Url.Content("../Views/Students1/Student.css")" rel="stylesheet" type="text/css" />
+    }*@
+
+@*@{
+    ViewData["Title"] = "Index";
+}*@
+
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    @*<link rel="stylesheet" type="text/css" href="../Views/Students1/Student.css" />*@
+    @*<link href="@Url.Content("../Views/Students1/Student.css")" rel="stylesheet" type="text/css" />*@
+
+@*<link href="C:\Users\user\source\repos\StudentManagementSystem\Views\Students1\Student.css" rel="stylesheet" />*@
+
+
+</head>
+<body>
+
+    @model IEnumerable<demoCoreWithMVC.Models.Student>
+    @{
+            ViewData["Title"] = "Index";
+     }
+
+    <div class="Create_Button">
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StdCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marks)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Addesss)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StdCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marks)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Addesss)
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div @*onclick="Clicked()"*@ onclick="~/Views/Home/View.cshtml" style="cursor:pointer">
+        ONClick
+    </div>
+</body>
+
+
+
+<style>
+       .Create_Button {
+            height:100px;
+            background-color:aqua
+
+        }
+</style>
+
+
+
+<script type="text/javascript">
+    function Clicked()
+    {
+        console.log("In the Index Page");
+      
+    }
+</script>
+
+
+</html>
+
+
+
+
+
+
+
+
+
